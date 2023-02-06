@@ -2,9 +2,9 @@
 # Nhập tháng bất kỳ (gồm có ngày tháng năm), kiểm tra tính hợp lệ của ngày tháng vừa nhập
 
 
-$ngay = rand(1,31);
-$thang = rand(1,12);
-$nam = rand(2003,2023);
+$ngay = rand(1, 31);
+$thang = rand(1, 12);
+$nam = rand(2003, 2023);
 
 
 switch ($thang) {
@@ -48,3 +48,5 @@ switch ($thang) {
       break;
     }
 }
+
+echo "<br><BUTTON TYPE=\'button\" onClick=\"history.go(0)\" >Refresh</BUTTON>";
