@@ -1,13 +1,21 @@
 <?php
 # Nhập tháng bất kỳ, trả lời tháng đó có bao nhiêu ngày
 
-$month = (int) readline('Enter a months: ');
+$month = rand(1,12);
 
 switch ($month) {
-    case 1 || 3 || 5 || 7 || 8 || 10 || 12:
+    case 1:
+    case 3:
+    case 5:
+    case 7:
+    case 8:
+    case 10:
+    case 12:
         echo "Tháng $month có 31 ngày";
         break;
-    case 4 || 6 || 11:
+    case 4:
+    case 6:
+    case 11:
         echo "Tháng $month có 30 ngày";
         break;
     case 2:
