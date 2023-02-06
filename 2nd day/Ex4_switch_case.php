@@ -3,7 +3,7 @@
 // 7.0 - 8.0: Khá, 5.0 - 7.0: Trung bình, còn lại là yếu)
 
 
-$score = (float) readline("Enter student's score: ");
+$score = 9.1;
 
 switch ($score) {
     case $score > 9.0 and $score <= 10:
