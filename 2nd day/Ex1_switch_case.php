@@ -29,3 +29,5 @@ switch ($month) {
     default:
         $month = (int) readline('Enter a months (1 to 12): ');
 }
+
+echo "<br><BUTTON TYPE=\'button\" onClick=\"history.go(0)\" >Refresh</BUTTON>";
