@@ -19,7 +19,7 @@ switch ($month) {
         echo "Tháng $month có 30 ngày";
         break;
     case 2:
-        $year = (int) readline('Enter year: ');
+        $year = rand(0,2023);
         if ($year % 4 == 0 && ($year % 100 != 0 || $year % 400 == 0)) {
             echo "Tháng $month năm $year có 29 ngày";
         } else {
@@ -30,4 +30,5 @@ switch ($month) {
         $month = (int) readline('Enter a months (1 to 12): ');
 }
 
+echo "<body style='background-color:lightblue;color:black;font-size:30px;'>";
 echo "<br><BUTTON TYPE=\'button\" onClick=\"history.go(0)\" >Refresh</BUTTON>";
