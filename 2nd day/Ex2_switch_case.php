@@ -22,7 +22,6 @@ switch ($thang) {
       echo ("Ngay $ngay thang $thang nam $nam khong hop le\n");
       break;
     }
-
   case 4:
   case 6:
   case 9:

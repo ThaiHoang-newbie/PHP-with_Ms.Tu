@@ -1,1 +1,1 @@
-### This is Thai Hoang's php repo
+### This is Thai Hoang's PHP repo
