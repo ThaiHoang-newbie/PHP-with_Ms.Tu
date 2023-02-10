@@ -1,14 +1,13 @@
 <table border="1px">
 <tr>
 <?php # Bang cuu chuong
-for($i = 1; $i < 10; $i ++) {
-    echo "<td>";
-    for($j = 1; $j <= 10; $j ++) {
-        echo "$i x $j = " . ($i * $j);
+
+$n = 7;
+    for($j = 1; $j <= $n; $j ++) {
+        echo "$n x $n = " . ($j * $n);
         echo "<br>";
     }
-    echo "</td>";
-}
+
 ?>
 </tr>
 </table>
