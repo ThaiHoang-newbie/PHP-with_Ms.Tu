@@ -7,13 +7,15 @@
     <input type="submit" name="btn">
 </form>
 
-<?php
-if (isset($_POST["btn"])) {
+<?php # Tinh tong hai so
+if (isset($_POST["num1"]) || isset($_POST["num2"])) {
     $a = $_POST['num1'];
     $b = $_POST['num2'];
     echo "Sum: $a + $b = " . $a + $b;
 };
 ?>
+
+
 
 <form method="POST" action="">
     Name:
@@ -21,11 +23,11 @@ if (isset($_POST["btn"])) {
     
     <input type="submit" name="btn1">
 </form>
-
-<?php
+<?php # Hello name
 if (isset($_POST["btn1"])) {
     $name = $_POST['name'];
 
     echo "Hello $name";
 };
 ?>
+
