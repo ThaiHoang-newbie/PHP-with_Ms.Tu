@@ -1,17 +1,17 @@
 <?php if (isset($_POST["btn"])) {
-    $tk = $_POST["1"];
-    $mk = $_POST["2"];
+    $tk = $_POST["txtTK"];
+    $mk = $_POST["txtMK "];
     $a = ["h"];
     $b = ["h123"];
     if ($a[0] == $tk && $b[0] == $mk) {
         echo "<script> alert ('Đăng nhập thành công')</script>";
         header("refresh:0.5; url =  https://www.youtube.com/");
     } elseif ($a[0] != $tk && $b[0] != $mk) {
-        echo "<script> alert('sai tài khoản và password') </script>";
+        echo "<script> alert('Sai tài khoản hoặc mật khẩu') </script>";
     } elseif ($a[0] != $tk) {
-        echo "<script> alert ('đăng nhập sai tài khoản') </script>";
+        echo "<script> alert ('Sai tài khoản hoặc mật khẩu') </script>";
     } elseif ($b[0] != $mk) {
-        echo "<script> alert ('đăng nhập sai password') </script>";
+        echo "<script> alert ('Sai tài khoản hoặc mật khẩu') </script>";
     }
 }
 ?>
@@ -24,7 +24,7 @@
         <form action="#" method="post">
             <div class="field email">
                 <div class="input-area">
-                    <input type="text" placeholder="Email Address" name="1">
+                    <input type="text" placeholder="Email Address" name="txtTK">
                     <i class="icon fas fa-envelope"></i>
 
                 </div>
@@ -32,7 +32,7 @@
             </div>
             <div class="field password">
                 <div class="input-area">
-                    <input type="password" placeholder="Password" name="2">
+                    <input type="password" placeholder="Password" name="txtMK">
                     <i class="icon fas fa-lock"></i>
 
                 </div>
@@ -40,7 +40,6 @@
             </div>
             <input type="submit" value="Login" name="btn">
         </form>
-
     </div>
 
 
