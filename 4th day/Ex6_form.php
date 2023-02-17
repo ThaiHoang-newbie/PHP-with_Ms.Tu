@@ -1,5 +1,5 @@
 <form method="POST" action="">
-    Nhap tien:
+    Nhập số lượng tiền:
     <input type="number" name="txtATM">
 
     <input type="submit" name="btn1" value="Get">
@@ -9,9 +9,9 @@
 
 if (isset($_POST["txtATM"]) || isset($_POST["btn1"])) {
     # Mô phỏng ATM
-    $money = $_POST['txtATM'];
+    $money = $_POST['txtATM']; 
 
-    $n50 = 0;
+    $n50 = 0; 
     for ($sl_50 = 0; $sl_50< $money; $sl_50 += 50) {
         $n50++;
     }
@@ -19,7 +19,7 @@ if (isset($_POST["txtATM"]) || isset($_POST["btn1"])) {
         $sl_50 -= 50;
         $n50 -= 1;
     }
-
+    
     $n20 = 0;
     for ($sl_20 = $sl_50; $sl_20 < $money; $sl_20 += 20) {
         $n20++;
@@ -51,11 +51,11 @@ if (isset($_POST["txtATM"]) || isset($_POST["btn1"])) {
     }
 
 
-    echo "Voi so tien la $money k <br>";
-    echo "Ban se nhan: <br>";
-    echo "$n50 lan 50k 
-    <br> $n20 lan 20k 
-    <br> $n10 lan 10k 
-    <br> $n5 lan 5k. ";
+    echo "Với số tiền là $money vnđ <br>";
+    echo "Bạn sẽ nhận: <br>";
+    echo "$n50 tờ 50k 
+    <br> $n20 tờ 20k 
+    <br> $n10 tờ 10k 
+    <br> $n5 tờ 5k. ";
 }
 ;

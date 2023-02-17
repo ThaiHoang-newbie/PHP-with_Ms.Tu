@@ -1,5 +1,3 @@
-# Nhập tháng bất kỳ (gồm có ngày tháng năm), kiểm tra tính hợp lệ của ngày tháng vừa nhập
-
 <form method="POST" action="">
     Ngay:
     <input type="number" name="ngay">
@@ -11,7 +9,7 @@
     <input type="submit" name="btn1">
 </form>
 
-<?php
+<?php # Nhập tháng bất kỳ (gồm có ngày tháng năm), kiểm tra tính hợp lệ của ngày tháng vừa nhập
 
 if (isset($_POST["ngay"]) || isset($_POST["thang"]) || isset($_POST["nam"])) {
     $ngay = $_POST['ngay'];
