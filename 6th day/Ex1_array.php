@@ -1,4 +1,3 @@
-
 <body>
     <div class="wrapper">
         <header>Login Form</header>
@@ -36,16 +35,27 @@ if (isset($_POST["username"]) || isset($_POST["password"])) {
 
 if (isset($_POST["btn"])) {
     $account = array(
-        "hoang" => "hoang2011",
+        "1@gmail.com" => "hoang2011",
         "h@gmail.com" => "h2011"
     );
+    $check = 0;
 
     foreach ($account as $a => $b) {
-        if ($us == $a && $pw == $b) {
-            header('Location: https://github.com/ThaiHoang-newbie');
-            exit;
-        }
+        if ($us == $a) {
+            if ($pw == $b) {
+                header('Location: https://github.com/ThaiHoang-newbie');
+                exit;
+            } else {
+                $check = 0;
+            }
+        } else {
+            $check++;
+        }}
 
+    if ($check != 0) {
+        echo "<script> alert('Sai tài khoản') </script>";
+    }else{
+        echo "<script> alert('Sai mật khẩu') </script>";
     }
 }
 ?>
