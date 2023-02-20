@@ -52,3 +52,46 @@ echo ("\n");
 
 echo (getMin($array, $all));
 ?>
+
+
+
+
+
+
+
+<form method="POST" action="">
+    Từ:
+    <input type="text" name="txtTu">
+
+    <input type="submit" name="btn">
+    Kết quả:
+</form>
+
+
+
+
+<?php
+if (isset($_POST["txtTu"])) {
+    $tu = $_POST['txtTu'];
+}
+
+if (isset($_POST["btn"])) {
+
+    $valid = false;
+    $dict = [
+        "dog" => "Chó",
+        "pig" => "Heo",
+        "cock" => "Gà trống"
+    ];
+
+    foreach ($dict as $a => $a_value) {
+        if (strtolower($tu) == $a) {
+            echo $a_value;
+            $valid = true;
+        }
+        if ($valid = false) {
+            echo "Từ điển đang update thêm!";
+        }
+    }
+}
+?>
