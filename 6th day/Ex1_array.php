@@ -14,9 +14,7 @@
                 <div class="input-area">
                     <input type="password" placeholder="Password" name="password">
                     <i class="icon fas fa-lock"></i>
-
                 </div>
-                <div class="error error-txt">Password</div>
             </div>
             <input type="submit" value="Login" name="btn">
         </form>
@@ -27,23 +25,37 @@
 
 
 
+
+
 <?php # Form đăng nhập dùng mảng liên hợp
-if (isset($_POST["username"]) && isset($_POST["password"])) {
-    $username = $_POST["username"];
-    $password = $_POST["password "];
+if (isset($_POST["username"]) || isset($_POST["password"])) {
+    $us = $_POST["username"];
+    $pw = $_POST["password"];
 }
 
 if (isset($_POST["btn"])) {
     $account = array(
-        "hoang" => "hoang2011",
+        "1@gmail.com" => "hoang2011",
         "h@gmail.com" => "h2011"
     );
+    $check = 0;
 
     foreach ($account as $a => $b) {
-        if ($username == $a && $password == $b) {
-            echo '<p class="error">Username password combination is wrong!</p>';
-        }
+        if ($us == $a) {
+            if ($pw == $b) {
+                header('Location: https://github.com/ThaiHoang-newbie');
+                exit;
+            } else {
+                $check = 0;
+            }
+        } else {
+            $check++;
+        }}
 
+    if ($check != 0) {
+        echo "<script> alert('Sai tài khoản') </script>";
+    }else{
+        echo "<script> alert('Sai mật khẩu') </script>";
     }
 }
 ?>
