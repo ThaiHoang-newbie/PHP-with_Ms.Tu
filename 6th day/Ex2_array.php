@@ -9,7 +9,6 @@
 
 <?php #Rendering data to table
 
-
 $account = array(
     "hoang" => "hoang2011",
     "h@gmail.com" => "h2011"
@@ -17,9 +16,7 @@ $account = array(
 
 
 
-
 echo "<table><tr><th>STT</th><th>Username</th><th>Pass</th></tr>";
-
 $i = 1;
 foreach ($account as $a => $b) {
     echo "<tr><td>$i</td><td>$a</td><td>$b</td></tr>";
@@ -27,5 +24,4 @@ foreach ($account as $a => $b) {
 }
 ;
 echo "</table>";
-
 ?>
