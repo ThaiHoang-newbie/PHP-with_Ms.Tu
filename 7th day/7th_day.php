@@ -37,7 +37,6 @@ if (isset($_POST["username"]) || isset($_POST["password"])) {
     $pw = $_POST["password"];
     # Session here
     $_SESSION["username"] = $us;
-    
 }
 
 if (isset($_POST["btn"])) {
@@ -50,7 +49,7 @@ if (isset($_POST["btn"])) {
     foreach ($account as $a => $b) {
         if ($us == $a) {
             if ($pw == $b) {
-                header('Location: 7th_day.php');
+                header('Location: hello.php');
                 exit;
             } else {
                 $check = 0;
