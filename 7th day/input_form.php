@@ -27,7 +27,6 @@ if (isset($_POST["txtsp"]) || isset($_POST["txtgt"]) || isset($_POST["txtmt"]) |
     $giatien = $_POST["txtgt"];
     $mota = $_POST["txtmt"];
     $hinhanh = $_POST["txtha"];
-
 }
 
 
@@ -44,4 +43,12 @@ if (isset($_POST["btn"])) {
 
     header("Location: output_form.php");
 }
+if (isset($_POST["btn-delete"])) {
+    $index = $_POST["index"];
+    unset($_SESSION["traicay"][$index]);
+    header("location: http://localhost/PHP-with_Ms.Tu/7th%20day/input_form.php");
+    exit();
+}
+
+?>
 ?>
