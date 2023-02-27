@@ -1,5 +1,6 @@
 <style>
-    tr, td{
+    tr,
+    td {
         border: 1px solid black;
     }
 </style>
@@ -10,22 +11,25 @@ session_start();
 
 
 <tr>
-    <?php 
-            $n = 0;
+    <?php
+    $n = 0;
 
-        if (isset($_SESSION["ar"])) {
-            $n = count($_SESSION["ar"]);
-            echo $n;
-        }
-        for ($i = 0; $i < $n; $i++){?>
-            <td><?php echo $_SESSION["ar"][$i]["sp"]?></td>
-            <td><?php echo $_SESSION["ar"][$i]["gt"]?></td>
-            <td><?php echo $_SESSION["ar"][$i]["mt"]?></td>
-            <td><?php echo $_SESSION["ar"][$i]["ha"]?></td>
-            <br>    
+    if (isset($_SESSION["ar"])) {
+        $n = count($_SESSION["ar"]);
+        echo $n;
+    }
+    for ($i = 0; $i < $n; $i++) { ?>
+        <td><?php echo $_SESSION["ar"][$i]["sp"] ?></td>
+        <td><?php echo $_SESSION["ar"][$i]["gt"] ?></td>
+        <td><?php echo $_SESSION["ar"][$i]["mt"] ?></td>
+        <td><?php echo $_SESSION["ar"][$i]["ha"] ?></td>
+        <td>
+            <input type="submit" name="btn-delete" id="<?php echo $index; ?>" value="Xóa">
+        </td>
+        <br>
     <?php } ?>
 
 </tr>
 
 
-<a href= "http://localhost/PHP-with_Ms.Tu/7th%20day/input_form.php">Nhập tiếp</a>
+<a href="http://localhost/PHP-with_Ms.Tu/7th%20day/input_form.php">Nhập tiếp</a>
