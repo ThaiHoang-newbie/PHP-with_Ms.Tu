@@ -26,6 +26,9 @@ session_start();
         <td>
             <input type="submit" name="btn-delete" id="<?php echo $index; ?>" value="Xóa">
         </td>
+        <td>
+            <input type="submit" name="btn-update" id="<?php echo $index; ?>" value="Sửa">
+        </td>
         <br>
     <?php } ?>
 
