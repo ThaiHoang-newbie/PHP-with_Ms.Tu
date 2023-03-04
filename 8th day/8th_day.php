@@ -22,7 +22,7 @@
 
 if (isset($_POST['btn'])) {
     if (isset($_FILES['hinhanh'])) {
-        if ($_FILES['hinhanh']['size'] == 0) {
+        if ($_FILES['hinhanh']['name'] == "") {
             echo "Bạn chưa chọn hình ảnh!";
         } else {
             if (isset($_FILES['hinhanh'])) {
