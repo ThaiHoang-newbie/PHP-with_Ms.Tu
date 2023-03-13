@@ -27,23 +27,23 @@
       'G1' => array(
         'id' => 1,
         'title' => 'Sandal nữ cao gót phong cách Hàn Quốc - Kem ',
-        'oldprice' => '350000',
+        'oldprice' => '650000',
         'price' => '400000',
         'img' => 'https://salt.tikicdn.com/cache/w1200/ts/product/cf/99/89/bf004aa9986efce181885a2e6cdd06cf.jpg'
       ),
       'G2' => array(
         'id' => 2,
         'title' => 'Giày sandal để xuống 7 cm quai chéo 10190',
-        'oldprice' => '550000',
+        'oldprice' => '',
         'price' => '600000',
-        'img' => 'https://salt.tikicdn.com/cache/w1200/ts/product/cf/99/89/bf004aa9986efce181885a2e6cdd06cf.jpg'
+        'img' => 'https://tse2.mm.bing.net/th?id=OIP.6oSfUVM9hErzx4_hfLWBPAHaHa&pid=Api&P=0'
       ),
       'G3' => array(
         'id' => 3,
         'title' => 'Giày cao gót bít mũi Tammy shoes 8cm đen',
         'oldprice' => '218000',
         'price' => '218000',
-        'img' => 'https://cdnb.lystit.com/photos/mytheresa/9b39118b/gucci-brown-Ophidia-GG-Small-Shoulder-Bag.jpeg'
+        'img' => 'https://3.bp.blogspot.com/-gD9aCFpueyQ/UnpKRAlIaxI/AAAAAAAACBQ/fYRrt0ENaF0/s1600/giay-the-thao-nu-5.jpg'
       )
     ),
 
@@ -51,14 +51,14 @@
       'T1' => array(
         'id' => 1,
         'title' => 'Túi xách nữ thời trang POKETO',
-        'oldprice' => '9000',
+        'oldprice' => '11000',
         'price' => '10000',
         'img' => 'https://images-na.ssl-images-amazon.com/images/I/8118ZfaYYlL._AC_UL1500_.jpg'
       ),
       'T2' => array(
         'id' => 2,
         'title' => 'Túi xách nữ thời trang POKETO',
-        'oldprice' => '600000',
+        'oldprice' => '',
         'price' => '600000',
         'img' => 'https://ae01.alicdn.com/kf/HTB1TmJNa5LxK1Rjy0Ffq6zYdVXaT/BEAU-Womens-Handbags-And-Purses-Fashion-Top-Handle-Satchel-Tote-Pu-Leather-Shoulder-Bags.jpg'
       ),
@@ -73,7 +73,7 @@
   )
 
 
-  
+
   ?>
 
   <div class="item-shoes">
@@ -92,20 +92,29 @@
         <div class="price">
 
           <?php echo $b2['price'] ?>
-          
+
           <?php // Check có giảm hay không
-          if ($b2['price'] > $b2['oldprice'] || $b2['oldprice'] == null) {
-            echo "<small><del>" . $b2['oldprice'] . "</del></small>"; 
-            ?>
-            <center><button style="background-color: red;" onclick="grateful()">Đang giảm giá 
-            <?php // Tính giá giảm
-            $saleof = ($b2['oldprice'] - $b2['price']);
-            $saleof = round($saleof);
-            echo $saleof;
-            ?></button></center>
+          if ($b2['price'] < $b2['oldprice']) {
+            echo "<small><del>" . $b2['oldprice'] . "</del></small>";
+          ?>
+            <center><button style="background-color: red;" onclick="grateful()">Đang giảm giá
+                <?php // Tính giá giảm
+                $saleof = ($b2['oldprice'] - $b2['price']);
+                $saleof = round($saleof);
+                echo $saleof;
+                ?></button></center>
+
+          <?php } else if ($b2['oldprice'] == null) { ?>
+            <center><button style="background-color: orange;" onclick="grateful()">Sản phẩm mới
+              </button></center>
+
           <?php } else { ?>
             <center><button onclick="grateful()" id="<?php echo $b2["id"] ?>" href="">Buy now</button></center>
           <?php } ?>
+
+
+
+
 
         </div>
       <?php } ?>
