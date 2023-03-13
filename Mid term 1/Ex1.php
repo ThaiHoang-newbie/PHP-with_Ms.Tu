@@ -32,7 +32,7 @@
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <input type="password" name="password" placeholder="Password" minlength="8">
+                        <input type="password" name="password" placeholder="Password" minlength="8" maxlength="15">
                     </td>
                 </tr>
 
@@ -72,6 +72,7 @@
             if (preg_match("/^([a-zA-Z' ]+)$/", $lname)) {
 
             } else {
+                $err = "lname";
                 echo '<script language="javascript" type="text/javascript"> ';
                 echo 'alert("Invalid last name given")';
                 echo '</script>';
