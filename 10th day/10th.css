@@ -1,0 +1,17 @@
+table{
+    border: 1px black solid;
+    text-align: center;
+}
+td{
+    border: 1px black solid;
+    text-align: center;
+    width: 100px;
+}
+.imgs{
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    justify-content: center;
+}
+
+

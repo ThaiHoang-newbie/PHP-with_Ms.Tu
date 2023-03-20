@@ -1,4 +1,18 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Hello</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="./10th.css">
+</head>
+
+
 <?php
+
+
 
 class Person
 {
@@ -153,16 +167,6 @@ echo $calmulti->getCalculate();
 # Connect MySQL
 
 
-// require_once 'public.php';
-
-
-// try {
-//     $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-//     echo "Connected to $dbname at $host successfully.";
-// } catch (PDOException $pe) {
-//     die("Could not connect to the database $dbname :" . $pe->getMessage());
-// }
-
 $host = 'localhost';
 $user = 'root';
 $pass = '';
@@ -170,16 +174,56 @@ $dbname = 'fruit';
 $conn = mysqli_connect($host, $user, $pass, $dbname);
 if (!$conn) {
     die('Could not connect: ');
+} else {
+    echo 'Connected successfully';
 }
-echo 'Connected successfully';
-mysqli_close($conn);
 
-$sql = "seclect fruit_name from fruit";
-$result = mysqli_query($conn, $sql) or die ("MySQL querry errror");
-$i = 1;
-while ($row = mysqli_fetch_assoc($result)){
-    echo $i.".".$row['fruit_name']."<br>";
-    $i++;
-}
+
+echo "<br>";
+$sql = "SELECT * FROM `product`";
+$result = mysqli_query($conn, $sql);
 
 ?>
+
+
+
+
+
+
+
+
+<table>
+    <tr>
+        <th>Số thứ tự</th>
+        <th>Tên sản phẩm</th>
+        <th>Đơn vị tính</th>
+        <th>Giá tiền</th>
+        <th>Số lượng</th>
+        <th>Hình ảnh</th>
+    </tr>
+    <?php
+    if (mysqli_num_rows($result) > 0) {
+        // output data of each row
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo "<br>";
+    ?>
+            <tr>
+                <td><?php echo $row["pro_id"] ?></td>
+                <td><?php echo $row["pro_name"] ?></td>
+                <td><?php echo $row["unit"] ?></td>
+                <td><?php echo $row["price"] ?></td>
+                <td><?php echo $row["pro_quantity"] ?></td>
+                <td><img class="imgs" src="<?php echo $row["fruit_image"] ?>" /></td>
+            </tr>
+
+    <?php
+        }
+    } else {
+        echo "0 results";
+    }
+
+    mysqli_close($conn);
+    ?>
+</table>
+
+</html>
